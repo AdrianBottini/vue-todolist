@@ -4,12 +4,15 @@ new Vue({
         todos: [ 
             {
                 text: 'Fare la Spesa',
+                done: true
             },
             {
                 text: 'Fare i compiti',
+                done: false
             },
             {
                 text: 'Fare il bucato',
+                done: false
             },
         ],
         newTodo: '',
@@ -18,7 +21,7 @@ new Vue({
         addTodo() {
             if (this.newTodo.trim()) {
                 this.todos.push(this.newTodo.trim());
-                // this.newTodo = '';
+                this.newTodo = '';
             }
         },
         deleteTodo(index) {
