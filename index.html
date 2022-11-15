@@ -27,7 +27,7 @@
             <ul v-if="todos.lenght !== 0">
                 <li v-for="(todo, index) in todos" :key="todo.text" class="todo">
                     {{ todo.text }}
-                    <i class="fas fa-times" @click="deleteTodo(i)"></i>
+                    <i class="fas fa-times" @click="deleteTodo(index)"></i>
                 </li>
             </ul>
             <h2 v-else>Non ci sono todo</h2>
