@@ -20,7 +20,9 @@ new Vue({
     methods: {
         addTodo() {
             if (this.newTodo.trim()) {
-                this.todos.push(this.newTodo.trim());
+                this.todos.push({
+                    text: this.newTodo,
+                });
                 this.newTodo = '';
             }
         },
