@@ -25,8 +25,8 @@
         </div>
         <div class="todos-container">
             <ul v-if="todos.lenght !== 0">
-                <li v-for="(todo, i) in todos" :key="todo" class="todo">
-                    {{ todo }}
+                <li v-for="(todo, index) in todos" :key="todo.text" class="todo">
+                    {{ todo.text }}
                     <i class="fas fa-times" @click="deleteTodo(i)"></i>
                 </li>
             </ul>

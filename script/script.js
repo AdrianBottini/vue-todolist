@@ -1,10 +1,16 @@
 new Vue({
     el: '#app',
     data: {
-        todos: [
-            'Fare i compiti',
-            'Fare la spesa',
-            'Fare il bucato'
+        todos: [ 
+            {
+                text: 'Fare la Spesa',
+            },
+            {
+                text: 'Fare i compiti',
+            },
+            {
+                text: 'Fare il bucato',
+            },
         ],
         newTodo: '',
     },
