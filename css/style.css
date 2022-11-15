@@ -61,3 +61,7 @@ html {
 .todo i:hover {
     color: #c00;
 }
+
+.sbarrato {
+    text-decoration: line-through;
+}
