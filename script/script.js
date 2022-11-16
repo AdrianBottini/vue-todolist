@@ -8,26 +8,33 @@ new Vue({
             },
             {
                 text: 'Fare i compiti',
-                done: false
+                done: true
             },
             {
                 text: 'Fare il bucato',
                 done: false
             },
         ],
-        newTodo: '',
+        newTodo: {
+            text: '',
+            done: false
+        },
     },
     methods: {
         addTodo() {
-            if (this.newTodo.trim()) {
+            if (this.newTodo.text.trim()) {
                 this.todos.push({
-                    text: this.newTodo,
+                    text: this.newTodo.text.trim(),
+                    done: this.newTodo.done,
                 });
-                this.newTodo = '';
+                this.newTodo.text = '';
             }
         },
         deleteTodo(index) {
             this.todos.splice(index, 1);
         },
+        invertDone(index) {
+            this.todos[index].done = !this.todos[index].done;
+        }
     }
 });

@@ -20,17 +20,17 @@
     <div id="app" class="container">
         
         <div class="new-todo">
-            <input @keyup.enter="addTodo" type="text" placeholder="Nuovo Todo" v-model="newTodo" />
+            <input @keyup.enter="addTodo" type="text" placeholder="Nuovo Todo" v-model="newTodo.text" />
             <button @click="addTodo">Aggiungi</button>
         </div>
         <div class="todos-container">
-            <ul v-if="todos.length !== 0">
-                <li v-for="(todo, index) in todos" :key="todo.text" class="todo" :class="{ sbarrato: todo.done === true }">
+            <h2 v-if="todos.length == 0">Non ci sono todo</h2>
+            <ul v-else>
+                <li v-for="(todo, index) in todos" :key="todo.text" class="todo" @click="invertDone(index)" :class="{sbarrato: todo.done}">
                     {{ todo.text }}
                     <i class="fas fa-times" @click="deleteTodo(index)"></i>
                 </li>
             </ul>
-            <h2 v-else>Non ci sono todo</h2>
         </div>
     </div>
 </body>
